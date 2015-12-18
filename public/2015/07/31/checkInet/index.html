@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>shell检测是否能联网 | 依依木 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="依依木">
+  
+  
+    <meta name="description" content="用shell，来判断网络是否正常，拿了几个ip来搞，嘿嘿。">
+  
+  
+  <meta name="description" content="用shell，来判断网络是否正常，拿了几个ip来搞，嘿嘿。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell检测是否能联网">
+<meta property="og:url" content="http://wlmutou.github.io/2015/07/31/checkInet/index.html">
+<meta property="og:site_name" content="依依木">
+<meta property="og:description" content="用shell，来判断网络是否正常，拿了几个ip来搞，嘿嘿。">
+<meta property="og:updated_time" content="2015-10-07T11:41:39.577Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell检测是否能联网">
+<meta name="twitter:description" content="用shell，来判断网络是否正常，拿了几个ip来搞，嘿嘿。">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+<body>
+  <div class="wrapper">
+	<header id="header">
+  <div class="title">
+    <h1><a href="/">依依木<font size="3px">&nbsp;人生苦短，执念太深，放不下......</font></a></h1>
+    <!--<p style="font-size:0.82em;margin-top:5px"><a  style='font-size:13px;font-style:normal' href="/"></a></p>-->
+    <p style="font-size:0.82em;"><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+      
+        <li><a  href="/">首页</a></li>
+	  
+      
+      
+        <li><a  href="/collection">收藏</a></li>
+	  
+      
+      
+        <li><a  href="/aboutMe">关于</a></li>
+	  
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a  href="/2015/07/31/checkInet/">
+<span class="titleFlag">
+</span>
+  <time style="display:inline" datetime="2015-07-31T11:48:39.000Z">
+    2015-07-31
+  </time>
+</a>
+
+    
+    
+  
+    <h1 class="title">shell检测是否能联网</h1>
+  
+
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>用shell，来判断网络是否正常，拿了几个ip来搞，嘿嘿。<br><a id="more"></a></p>
+<p>也不太知道有啥好办法，本来还是直接ping Baidu，然而，然而，然而，后来不这么搞了，然后，找到了几个比较厉害些的服务器ip来ping。(不知道出来ping之外，还有啥好办法判断网络是否畅通呢？求解.)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">###############################################################################</span></span><br><span class="line"><span class="comment"># Created Time: Wed 22 Jul 2015 03:49:45 PM CST</span></span><br><span class="line"><span class="comment">###############################################################################</span></span><br><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">on=<span class="string">"/run/inet_on"</span></span><br><span class="line">off=<span class="string">"/run/inet_off"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#########  额俄饿，这几个ip应该都比较稳定，不信去扫扫，嘿嘿 #####################</span></span><br><span class="line">ipList=(<span class="number">223.5</span>.<span class="number">5.5</span>  <span class="number">223.6</span>.<span class="number">6.6</span>  <span class="number">114.114</span>.<span class="number">114.114</span>  <span class="number">203.195</span>.<span class="number">205.1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">############################   添加路由表    ####################################</span></span><br><span class="line"><span class="keyword">for</span> ip <span class="keyword">in</span> <span class="variable">$&#123;ipList[@]&#125;</span>;<span class="keyword">do</span></span><br><span class="line">	route add <span class="variable">$ip</span> gw <span class="number">192.168</span>.<span class="number">64.4</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">################################################################################</span></span><br><span class="line"><span class="comment">#####################           循环检测函数           ##########################</span></span><br><span class="line"><span class="comment">################################################################################</span></span><br><span class="line"><span class="keyword">function</span>  <span class="function"><span class="title">checkInet</span></span>() &#123;</span><br><span class="line">	busybox ping -c <span class="number">3</span> -W <span class="number">3</span> -w <span class="number">3</span> <span class="variable">$ip</span> | grep <span class="string">'64 bytes'</span>   <span class="comment">#ping 3个包，有时候会丢包</span></span><br><span class="line">	var=$?</span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$var</span> = <span class="string">"0"</span> ];<span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"touch /run/inet_on"</span>        <span class="comment">#&gt;&gt; /run/ipconnect.log</span></span><br><span class="line">		Inet=<span class="number">1</span>                           <span class="comment">#使用Inet判断是否能ping通</span></span><br><span class="line">		<span class="keyword">if</span> [ ! <span class="operator">-f</span> <span class="variable">$on</span> ];<span class="keyword">then</span></span><br><span class="line">			touch /run/inet_on</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">		<span class="keyword">if</span> [ <span class="operator">-f</span> <span class="variable">$off</span> ];<span class="keyword">then</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"remove inet_off "</span>      <span class="comment">#&gt;&gt; /run/ipconnect.log</span></span><br><span class="line">			rm -rf <span class="variable">$off</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"touch /run/inet_off"</span>       <span class="comment">#&gt;&gt; /run/ipconnect.log</span></span><br><span class="line">		Inet=<span class="number">0</span>                           <span class="comment">#Inet=0，网络不通</span></span><br><span class="line">		<span class="keyword">if</span> [ ! <span class="operator">-f</span> <span class="variable">$off</span> ];<span class="keyword">then</span></span><br><span class="line">			touch /run/inet_off</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">		<span class="keyword">if</span> [ <span class="operator">-f</span> <span class="variable">$on</span> ];<span class="keyword">then</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"remove inet_on"</span>         <span class="comment">#&gt;&gt; /run/ipconnect.log</span></span><br><span class="line">			rm -rf <span class="variable">$on</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">########################## 循环检测ipList列表里的ip #############################</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">checkIpList</span></span> () &#123;</span><br><span class="line">	<span class="keyword">for</span> ip <span class="keyword">in</span> <span class="variable">$&#123;ipList[@]&#125;</span>;<span class="keyword">do</span></span><br><span class="line">		checkInet <span class="variable">$ip</span> Inet                    <span class="comment">#checkInet函数，如果网络通，Inet=1</span></span><br><span class="line">		<span class="keyword">if</span> [ <span class="variable">$Inet</span> == <span class="number">1</span> ];<span class="keyword">then</span></span><br><span class="line">			<span class="built_in">break</span>                         <span class="comment">#如果网络是通的，则不再检测下一个ip</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">################################################################################</span></span><br><span class="line"></span><br><span class="line">stime=<span class="number">0</span>       <span class="comment">#时间</span></span><br><span class="line">ntime=<span class="number">5</span>       <span class="comment">#开始每次等待3秒循环一次</span></span><br><span class="line">endtime=<span class="number">180</span>   <span class="comment">#循环60次后再</span></span><br><span class="line">two_ntime=<span class="number">60</span>  <span class="comment">#循环60次后，每60秒执行一次</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###############################################################################</span></span><br><span class="line"></span><br><span class="line">touch /run/inet_on                         <span class="comment">#默认设置为有网线状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> :</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$stime</span>  <span class="operator">-lt</span> <span class="variable">$endtime</span> ];<span class="keyword">then</span>       <span class="comment">#前两分钟每10秒检测一次</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$stime</span></span><br><span class="line">		checkIpList</span><br><span class="line">		stime=`expr <span class="variable">$stime</span> + <span class="variable">$ntime</span>`</span><br><span class="line">		sleep <span class="variable">$ntime</span></span><br><span class="line">	<span class="keyword">else</span>                                 <span class="comment">#两分钟后每60秒检测一次</span></span><br><span class="line">		checkIpList</span><br><span class="line">		sleep <span class="variable">$two_ntime</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+  <center><font color='#a44a54' size='2px'>(转载文章请注明原文出处 <a href="http://wlmutou.github.io/2015/07/31/checkInet/" style='font-color:#496b98'>依依木's 博客 </a>)</font></center>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/shell/">shell</a>
+  </div>
+
+      
+  <div class="tags" style="font-size:14px">
+    <a class="tags-link" href="/tags/shell/">shell</a>
+  </div>
+
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+<a name="comments"></a>
+<div class="ds-thread" data-thread-key="2015/07/31/checkInet/"  data-title="shell检测是否能联网" data-url="http://wlmutou.github.io/2015/07/31/checkInet/"></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+	 <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">Category</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/default/">default</a><small>2</small></li>
+  
+    <li><a href="/categories/lisp/">lisp</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>2</small></li>
+  
+    <li><a href="/categories/shell/">shell</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">TagCloud</h3>
+  <div class="entry">
+    <a href="/tags/lispbuidler/" style="font-size: 10px;">lispbuidler</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/关于/" style="font-size: 10px;">关于</a> <a href="/tags/数学模型/" style="font-size: 10px;">数学模型</a> <a href="/tags/爬山/" style="font-size: 10px;">爬山</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget blogroll">
+  <h3 class="title">BlogRoll</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="http://jun1484528313.blog.163.com/" target="_blank">jun1484528313</a></li>
+  
+    
+    <li><a href="http://evilbinary.org/" target="_blank">依依鸭</a></li>
+  
+    
+    <li><a href="http://blog.objcc.com/" target="_blank">Objcc</a></li>
+  
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+
+  </div>
+  <footer id="footer"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="copyright">
+  
+  &copy; 2015 <a href="/">依依木</a>
+  
+
+    <span id="busuanzi_container_site_pv">
+    |本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <span id="busuanzi_container_site_uv">
+    | <span id="busuanzi_value_site_uv"></span> 人次
+    </span>
+</div>
+<!--<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+--></footer>
+  <script src="/js/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'mutou' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+<div id="tobottom" style="position:fixed;bottom:10px;right:10px;cursor:pointer;">
+	<a title="查看TAG"><img src="/imgs/scrollbottom.png"/></a>
+</div>
+
+<script src="/js/tobottom.js"></script>
+
+<div id="totop" style="position:fixed;bottom:10px;right:10px;cursor:pointer;display:none">
+	<a title="返回顶部"><img src="/imgs/scrolltop.png"/></a>
+</div>
+
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(){
+	/*var img = new Image();
+	img.src = "http://vimer.me/favicon_share.png";
+	img.style.position = 'absolute';
+	img.style.left = '-1000px';
+	img.style.top = '-1000px';
+	img.style.zIndex="-1000";
+	document.body.insertBefore(img, document.body.firstChild);*/
+  })();
+</script>
+
+</body>
+</html>

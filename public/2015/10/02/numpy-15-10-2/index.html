@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>numpy-15-10-2 | 依依木 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="依依木">
+  
+  
+    <meta name="description" content="长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….">
+  
+  
+  <meta name="description" content="长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy-15-10-2">
+<meta property="og:url" content="http://wlmutou.github.io/2015/10/02/numpy-15-10-2/index.html">
+<meta property="og:site_name" content="依依木">
+<meta property="og:description" content="长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….">
+<meta property="og:updated_time" content="2015-10-07T11:41:39.577Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="numpy-15-10-2">
+<meta name="twitter:description" content="长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+<body>
+  <div class="wrapper">
+	<header id="header">
+  <div class="title">
+    <h1><a href="/">依依木<font size="3px">&nbsp;人生苦短，执念太深，放不下......</font></a></h1>
+    <!--<p style="font-size:0.82em;margin-top:5px"><a  style='font-size:13px;font-style:normal' href="/"></a></p>-->
+    <p style="font-size:0.82em;"><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+      
+        <li><a  href="/">首页</a></li>
+	  
+      
+      
+        <li><a  href="/collection">收藏</a></li>
+	  
+      
+      
+        <li><a  href="/aboutMe">关于</a></li>
+	  
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a  href="/2015/10/02/numpy-15-10-2/">
+<span class="titleFlag">
+</span>
+  <time style="display:inline" datetime="2015-10-02T12:11:36.000Z">
+    2015-10-02
+  </time>
+</a>
+
+    
+    
+  
+    <h1 class="title">numpy-15-10-2</h1>
+  
+
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…<br>好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….<br><a id="more"></a></p>
+<h2 id="1-1_创建">1.1 创建</h2><p>通过给array函数传递Python的序列对象创建数组,如果传递的是多层嵌套的序列,将创建多<br>维数组:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = np.array([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = np.array([<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c = np.array([[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">array([<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">       [ <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>d.dtype</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: name <span class="string">'d'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c.dtype    <span class="comment">#多维数组才有dtype得属性</span></span><br><span class="line">dtype(<span class="string">'int32'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>数组的大小通过shape属性获取<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.shape                    <span class="comment">#数组a只有一个元素，因为这是一维数组</span></span><br><span class="line">(<span class="number">4</span>,)                           </span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c.shape                    <span class="comment">#数组c有两个元素，c为二维数组</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<p>c数组里,第0轴的长度为3,第1轴的长度为4。还可以通过修改数组的shape属性,在保持数组元素个数不<br>变的情况下,改变数组每个轴的长度。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c.shape = <span class="number">4</span>,<span class="number">3</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>],</span><br><span class="line">       [ <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">       [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>],</span><br><span class="line">       [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>某个轴元素为-1，自动计算其中得长度<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c.shape = <span class="number">2</span>,-<span class="number">1</span>                </span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">       [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]])</span><br><span class="line">       </span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c.shape = -<span class="number">1</span>,-<span class="number">1</span>                <span class="comment">#嘿嘿，两个都是-1,将出错了...</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: can only specify one unknown dimension</span><br></pre></td></tr></table></figure></p>
+<p>数组reshape方法，可创建一个改变了尺寸得新数组，原来得数组得shape保持不变.但是，修改其中一个数组，另外一个数组得元素也会跟着改变。因为其共享数据存储区域。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>d = a.reshape((<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>d</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">1</span>]= <span class="number">300</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>d</span><br><span class="line">array([[  <span class="number">1</span>, <span class="number">300</span>],</span><br><span class="line">       [  <span class="number">3</span>,   <span class="number">4</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>数组得元素类型可以通过dtype属性获取。<br>通过dtype参数在创建得时候，指定元素类型…<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.array([[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]],dtype=np.float)</span><br><span class="line">array([[  <span class="number">1.</span>,   <span class="number">3.</span>,   <span class="number">4.</span>,   <span class="number">5.</span>],</span><br><span class="line">       [  <span class="number">5.</span>,   <span class="number">6.</span>,   <span class="number">7.</span>,   <span class="number">8.</span>],</span><br><span class="line">       [ <span class="number">10.</span>,  <span class="number">11.</span>,  <span class="number">12.</span>,  <span class="number">13.</span>]])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.array([[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]],dtype=np.complex)</span><br><span class="line">array([[  <span class="number">1.</span>+<span class="number">0.j</span>,   <span class="number">3.</span>+<span class="number">0.j</span>,   <span class="number">4.</span>+<span class="number">0.j</span>,   <span class="number">5.</span>+<span class="number">0.j</span>],</span><br><span class="line">       [  <span class="number">5.</span>+<span class="number">0.j</span>,   <span class="number">6.</span>+<span class="number">0.j</span>,   <span class="number">7.</span>+<span class="number">0.j</span>,   <span class="number">8.</span>+<span class="number">0.j</span>],</span><br><span class="line">       [ <span class="number">10.</span>+<span class="number">0.j</span>,  <span class="number">11.</span>+<span class="number">0.j</span>,  <span class="number">12.</span>+<span class="number">0.j</span>,  <span class="number">13.</span>+<span class="number">0.j</span>]])</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-2更高效率得创建python数组">1.2更高效率得创建python数组</h2><p>.arange函数，与python得arange函数类似.开始值，重值和布长，创建一维数组(不包重值)<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.arange(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.1</span>)</span><br><span class="line">array([ <span class="number">0.</span> ,  <span class="number">0.1</span>,  <span class="number">0.2</span>,  <span class="number">0.3</span>,  <span class="number">0.4</span>,  <span class="number">0.5</span>,  <span class="number">0.6</span>,  <span class="number">0.7</span>,  <span class="number">0.8</span>,  <span class="number">0.9</span>])</span><br></pre></td></tr></table></figure></p>
+<p>.linspace函数通过指定开始值、终值和元素个数来创建一维数组,通过endpoint关键字指定<br>是否包括终值,缺省设置是包括终值:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.linspace(<span class="number">0</span>, <span class="number">1</span>, <span class="number">12</span>)</span><br><span class="line">array([ <span class="number">0.</span>        ,  <span class="number">0.09090909</span>,  <span class="number">0.18181818</span>,  <span class="number">0.27272727</span>,  <span class="number">0.36363636</span>,</span><br><span class="line">        <span class="number">0.45454545</span>,  <span class="number">0.54545455</span>,  <span class="number">0.63636364</span>,  <span class="number">0.72727273</span>,  <span class="number">0.81818182</span>,</span><br><span class="line">        <span class="number">0.90909091</span>,  <span class="number">1.</span>        ])</span><br></pre></td></tr></table></figure></p>
+<p>.logspace 与linspace类似，不过它创建得等比数列.也就是(10**初值，10**终值，个数)<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.logspace(<span class="number">0</span>, <span class="number">2</span>, <span class="number">20</span>)                <span class="comment">#创建20个元素得等比数列</span></span><br><span class="line">array([   <span class="number">1.</span>        ,    <span class="number">1.27427499</span>,    <span class="number">1.62377674</span>,    <span class="number">2.06913808</span>,</span><br><span class="line">          <span class="number">2.6366509</span> ,    <span class="number">3.35981829</span>,    <span class="number">4.2813324</span> ,    <span class="number">5.45559478</span>,</span><br><span class="line">          <span class="number">6.95192796</span>,    <span class="number">8.8586679</span> ,   <span class="number">11.28837892</span>,   <span class="number">14.38449888</span>,</span><br><span class="line">         <span class="number">18.32980711</span>,   <span class="number">23.35721469</span>,   <span class="number">29.76351442</span>,   <span class="number">37.92690191</span>,</span><br><span class="line">         <span class="number">48.32930239</span>,   <span class="number">61.58482111</span>,   <span class="number">78.47599704</span>,  <span class="number">100.</span>        ])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>还有frombuffuer, fromstring, fromfile函数从字节序列创建数组<br>fromstring创建数组，创建8bit的整数数组就是把字符得ascii编码，创建16bit得数组，就把相临得表示一个整数.字节98和97当作一个16位得整数，其值就是98*256+97=25185<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s1 = <span class="string">"abcdefg"</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.fromstring(s1, dtype=np.int8)</span><br><span class="line">array([ <span class="number">97</span>,  <span class="number">98</span>,  <span class="number">99</span>, <span class="number">100</span>, <span class="number">101</span>, <span class="number">102</span>, <span class="number">103</span>], dtype=int8)</span><br><span class="line"></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s1 = <span class="string">"abcdefgh"</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.fromstring(s1, dtype=np.int16)</span><br><span class="line">array([<span class="number">25185</span>, <span class="number">25699</span>, <span class="number">26213</span>, <span class="number">26727</span>], dtype=int16)</span><br><span class="line"></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s2 = <span class="string">"abcdefg"</span>                      </span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.fromstring(s2, dtype=np.int16)    <span class="comment">#这里，变成int16得时候，记得字符串要是2得倍数，否则会出错</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: string size must be a multiple of element size</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>可以用个python函数，将数组下标转换为数组中对应得值，然后使用次数组创建数组<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(i)</span>:</span></span><br><span class="line"><span class="prompt">... </span>	<span class="keyword">return</span> i%<span class="number">4</span>+<span class="number">1</span></span><br><span class="line"><span class="prompt">... </span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.fromfunction(func, (<span class="number">10</span>,))</span><br><span class="line">array([ <span class="number">1.</span>,  <span class="number">2.</span>,  <span class="number">3.</span>,  <span class="number">4.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>,  <span class="number">3.</span>,  <span class="number">4.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>])</span><br></pre></td></tr></table></figure></p>
+<p>fromfunction函数，第一个参数为计算每个数组元素得函数，第二个参数为数组得大小(shape),因为它支持多维数组，所以第二个参数必须是一个序列.<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">(x,y)</span>:</span></span><br><span class="line"><span class="prompt">... </span>	<span class="keyword">return</span> (x+<span class="number">1</span>)*(y+<span class="number">1</span>)</span><br><span class="line"><span class="prompt">... </span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>all = np.fromfunction(func2, (<span class="number">9</span>,<span class="number">9</span>))</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>all</span><br><span class="line">array([[  <span class="number">1.</span>,   <span class="number">2.</span>,   <span class="number">3.</span>,   <span class="number">4.</span>,   <span class="number">5.</span>,   <span class="number">6.</span>,   <span class="number">7.</span>,   <span class="number">8.</span>,   <span class="number">9.</span>],</span><br><span class="line">       [  <span class="number">2.</span>,   <span class="number">4.</span>,   <span class="number">6.</span>,   <span class="number">8.</span>,  <span class="number">10.</span>,  <span class="number">12.</span>,  <span class="number">14.</span>,  <span class="number">16.</span>,  <span class="number">18.</span>],</span><br><span class="line">       [  <span class="number">3.</span>,   <span class="number">6.</span>,   <span class="number">9.</span>,  <span class="number">12.</span>,  <span class="number">15.</span>,  <span class="number">18.</span>,  <span class="number">21.</span>,  <span class="number">24.</span>,  <span class="number">27.</span>],</span><br><span class="line">       [  <span class="number">4.</span>,   <span class="number">8.</span>,  <span class="number">12.</span>,  <span class="number">16.</span>,  <span class="number">20.</span>,  <span class="number">24.</span>,  <span class="number">28.</span>,  <span class="number">32.</span>,  <span class="number">36.</span>],</span><br><span class="line">       [  <span class="number">5.</span>,  <span class="number">10.</span>,  <span class="number">15.</span>,  <span class="number">20.</span>,  <span class="number">25.</span>,  <span class="number">30.</span>,  <span class="number">35.</span>,  <span class="number">40.</span>,  <span class="number">45.</span>],</span><br><span class="line">       [  <span class="number">6.</span>,  <span class="number">12.</span>,  <span class="number">18.</span>,  <span class="number">24.</span>,  <span class="number">30.</span>,  <span class="number">36.</span>,  <span class="number">42.</span>,  <span class="number">48.</span>,  <span class="number">54.</span>],</span><br><span class="line">       [  <span class="number">7.</span>,  <span class="number">14.</span>,  <span class="number">21.</span>,  <span class="number">28.</span>,  <span class="number">35.</span>,  <span class="number">42.</span>,  <span class="number">49.</span>,  <span class="number">56.</span>,  <span class="number">63.</span>],</span><br><span class="line">       [  <span class="number">8.</span>,  <span class="number">16.</span>,  <span class="number">24.</span>,  <span class="number">32.</span>,  <span class="number">40.</span>,  <span class="number">48.</span>,  <span class="number">56.</span>,  <span class="number">64.</span>,  <span class="number">72.</span>],</span><br><span class="line">       [  <span class="number">9.</span>,  <span class="number">18.</span>,  <span class="number">27.</span>,  <span class="number">36.</span>,  <span class="number">45.</span>,  <span class="number">54.</span>,  <span class="number">63.</span>,  <span class="number">72.</span>,  <span class="number">81.</span>]])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>没事，就记录记录下了。下次就不用老是找那本书了</p>
+<h2 id="2-1_存储元素">2.1 存储元素</h2><p>数组存储元素与python一样<br>其他与python不一样得地发<br>1.使用整数序列<br>当使用整数序列对数组元素进行存取时,将使用整数序列中的每个元素作为下标,整数序列可以是列<br>表或者数组。使用整数序列作为下标获得的数组不和原始数组共享数据空间。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x = np.arange(<span class="number">10</span>,<span class="number">1</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">10</span>,  <span class="number">9</span>,  <span class="number">8</span>,  <span class="number">7</span>,  <span class="number">6</span>,  <span class="number">5</span>,  <span class="number">4</span>,  <span class="number">3</span>,  <span class="number">2</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[[<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">8</span>]]</span><br><span class="line">array([<span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = x[np.array([<span class="number">3</span>,<span class="number">3</span>,-<span class="number">3</span>,<span class="number">8</span>])]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">array([<span class="number">7</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">2</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b[<span class="number">2</span>]= <span class="number">100</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">array([  <span class="number">7</span>,   <span class="number">7</span>, <span class="number">100</span>,   <span class="number">2</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">10</span>,  <span class="number">9</span>,  <span class="number">8</span>,  <span class="number">7</span>,  <span class="number">6</span>,  <span class="number">5</span>,  <span class="number">4</span>,  <span class="number">3</span>,  <span class="number">2</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[[<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>]] = -<span class="number">1</span>,-<span class="number">2</span>,-<span class="number">3</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">10</span>, -<span class="number">3</span>,  <span class="number">8</span>, -<span class="number">1</span>,  <span class="number">6</span>, -<span class="number">2</span>,  <span class="number">4</span>,  <span class="number">3</span>,  <span class="number">2</span>])</span><br></pre></td></tr></table></figure></p>
+<p>2.使用布尔数组<br>当使用布尔数组b作为下标存取数组x中的元素时,将收集数组x中所有在数组b中对应下标为True的<br>元素。使用布尔数组作为下标获得的数组不和原始数组共享数据空间,注意这种方式只对应于布尔数<br>组,不能使用布尔列表。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>,<span class="number">0</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[np.array([<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">False</span>])]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="comment"># 布尔数组中下标为0,2的元素为True,因此获取x中下标为0,2的元素</span></span><br><span class="line">array([<span class="number">5</span>, <span class="number">3</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[[<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">False</span>]]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="comment"># 如果是布尔列表,则把True当作1, False当作0,按照整数序列方式获取x中的元素</span></span><br><span class="line">array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[np.array([<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">True</span>])]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="comment"># 布尔数组的长度不够时,不够的部分都当作False</span></span><br><span class="line">array([<span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[np.array([<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">True</span>])] = -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="comment"># 布尔数组下标也可以用来修改元素</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x</span><br><span class="line">array([-<span class="number">1</span>,<span class="number">4</span>, -<span class="number">2</span>, -<span class="number">3</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure></p>
+<p>布尔数组一般不是手工产生，而是使用布尔运算得ufunc函数产生<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x = np.random.rand(<span class="number">10</span>)        <span class="comment">#np产生随机数与python得random有点点不一样</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x </span><br><span class="line">array([ <span class="number">0.19109582</span>,  <span class="number">0.65634825</span>,  <span class="number">0.80140024</span>,  <span class="number">0.7822562</span> ,  <span class="number">0.63733259</span>,</span><br><span class="line">        <span class="number">0.01685087</span>,  <span class="number">0.74910217</span>,  <span class="number">0.47847799</span>,  <span class="number">0.18158406</span>,  <span class="number">0.63200789</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x &gt; <span class="number">0.5</span></span><br><span class="line">array([<span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>], dtype=bool)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x[x&gt;<span class="number">0.5</span>]</span><br><span class="line">array([ <span class="number">0.65634825</span>,  <span class="number">0.80140024</span>,  <span class="number">0.7822562</span> ,  <span class="number">0.63733259</span>,  <span class="number">0.74910217</span>,</span><br><span class="line">        <span class="number">0.63200789</span>])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-2_多维数组">2.2 多维数组</h2><p>多维数组的存取和一维数组类似,因为多维数组有多个轴,因此它的下标需要用多个值来表示,<br>NumPy采用组元(tuple)作为数组的下标.(组元不需要圆括号.虽然经常在Python中用圆括号将组元括起来,但是其实组元的语法定义只需要用逗号隔开即可,例如 x,y=y,x 就是用组元交换变量值的一个例子。)<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;myarray =  np.arange(<span class="number">0</span>, <span class="number">60</span>, <span class="number">10</span>).reshape(-<span class="number">1</span>, <span class="number">1</span>) + np.arange(<span class="number">0</span>,<span class="number">6</span>)</span><br><span class="line">myarray([[ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>],</span><br><span class="line">       [<span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>, <span class="number">25</span>],</span><br><span class="line">       [<span class="number">30</span>, <span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>, <span class="number">35</span>],</span><br><span class="line">       [<span class="number">40</span>, <span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>, <span class="number">45</span>],</span><br><span class="line">       [<span class="number">50</span>, <span class="number">51</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">54</span>, <span class="number">55</span>]])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>myarray[<span class="number">4</span>:,<span class="number">4</span>:]</span><br><span class="line">array([[<span class="number">44</span>, <span class="number">45</span>],</span><br><span class="line">       [<span class="number">54</span>, <span class="number">55</span>]])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>myarray[<span class="number">2</span>::<span class="number">2</span>,::<span class="number">2</span>]</span><br><span class="line">array([[<span class="number">20</span>, <span class="number">22</span>, <span class="number">24</span>],</span><br><span class="line">       [<span class="number">40</span>, <span class="number">42</span>, <span class="number">44</span>]])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.3结构数组</p>
+<p>为了与c方便得读取与转换数据，定义与c得struct关键子结构类型<br>定义一个结构数组,它的每个元素都有name, age和weight字段。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">&gt;&gt;&gt;persontype = np.dtype(&#123;</span><br><span class="line">    <span class="string">'names'</span>:[<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'weight'</span>],</span><br><span class="line">    <span class="string">'formats'</span>:[<span class="string">'S32'</span>,<span class="string">'i'</span>, <span class="string">'f'</span>]&#125;)</span><br><span class="line">&gt;&gt;&gt;a = np.array([(<span class="string">"Zhang"</span>,<span class="number">32</span>,<span class="number">75.5</span>),(<span class="string">"wang"</span>,<span class="number">24</span>,<span class="number">65.2</span>)],dtype=persontype)</span><br><span class="line">&gt;&gt;&gt;a</span><br><span class="line">array([(<span class="string">'Zhang'</span>, <span class="number">32</span>, <span class="number">75.5</span>), (<span class="string">'wang'</span>, <span class="number">24</span>, <span class="number">65.19999694824219</span>)], </span><br><span class="line">      dtype=[(<span class="string">'name'</span>, <span class="string">'S32'</span>), (<span class="string">'age'</span>, <span class="string">'&lt;i4'</span>), (<span class="string">'weight'</span>, <span class="string">'&lt;f4'</span>)])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">1</span>]</span><br><span class="line">(<span class="string">'wang'</span>, <span class="number">24</span>, <span class="number">65.19999694824219</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="string">"name"</span>]</span><br><span class="line">array([<span class="string">'Zhang'</span>, <span class="string">'wang'</span>], </span><br><span class="line">      dtype=<span class="string">'|S32'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>一个包含多个组元的列表,其中形如 (字段名, 类型描<br>述) 的组元描述了结构中的每个字段。类型描述前面为我们添加了 <code>|&#39;,</code>&lt;’ 等字符,这些字符用来描述字段值的字节顺序:<br>. |: 忽视字节顺序<br>. &lt;: 低位字节在前<br>. &gt;: 高位字节在前</p>
+<p>调用a.tostring或a.tofile方法，直接输出数组a得二进制形式<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.tofile(<span class="string">"a.bin"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>可用c读取<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> person&#123;</span><br><span class="line">  <span class="keyword">char</span> name[<span class="number">32</span>];</span><br><span class="line">  <span class="keyword">int</span> age;</span><br><span class="line">  <span class="keyword">float</span> weight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  FILE *fp;</span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line">  fp = fopen(<span class="string">"a.bin"</span>,<span class="string">"rb"</span>);</span><br><span class="line">  fread(p,<span class="keyword">sizeof</span>(<span class="keyword">struct</span> person),<span class="number">2</span>,fp);</span><br><span class="line">  fclose(fp);</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s %d %f\n"</span>,p[i].name, p[i].age, p[i].weight);</span><br><span class="line">  getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-ufunc运算">3.ufunc运算</h2><p>ufunc 是universal function得缩写，它是一种能对数组的每个元素进行操作得函数(使用c实现)<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x = np.linspace(<span class="number">0</span>, <span class="number">2</span>*np.pi, <span class="number">10</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>y = np.sin(x)                    <span class="comment">#np.sin 是一个ufunc函数</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>y</span><br><span class="line">array([  <span class="number">0.00000000e+00</span>,   <span class="number">6.42787610e-01</span>,   <span class="number">9.84807753e-01</span>,</span><br><span class="line">         <span class="number">8.66025404e-01</span>,   <span class="number">3.42020143e-01</span>,  -<span class="number">3.42020143e-01</span>,</span><br><span class="line">        -<span class="number">8.66025404e-01</span>,  -<span class="number">9.84807753e-01</span>,  -<span class="number">6.42787610e-01</span>,</span><br><span class="line">        -<span class="number">2.44929360e-16</span>])</span><br></pre></td></tr></table></figure></p>
+<p>先用linspace产生一个从0到2*PI的等距离的10个数,然后将其传递给sin函数,由于np.sin是一个<br>ufunc函数,因此它对x中的每个元素求正弦值,然后将结果返回,并且赋值给y。计算之后x中的值并<br>没有改变,而是新创建了一个数组保存结果。<br>如果希望将sin函数所计算的结果直接覆盖到数组x上去的话,可以将要被覆盖的数组作为第二个参数传递给ufunc函数。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>t = np.sin(x,x)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x</span><br><span class="line">array([  <span class="number">0.00000000e+00</span>,   <span class="number">6.42787610e-01</span>,   <span class="number">9.84807753e-01</span>,</span><br><span class="line">         <span class="number">8.66025404e-01</span>,   <span class="number">3.42020143e-01</span>,  -<span class="number">3.42020143e-01</span>,</span><br><span class="line">        -<span class="number">8.66025404e-01</span>,  -<span class="number">9.84807753e-01</span>,  -<span class="number">6.42787610e-01</span>,</span><br><span class="line">        -<span class="number">2.44929360e-16</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>t</span><br><span class="line">array([  <span class="number">0.00000000e+00</span>,   <span class="number">6.42787610e-01</span>,   <span class="number">9.84807753e-01</span>,</span><br><span class="line">         <span class="number">8.66025404e-01</span>,   <span class="number">3.42020143e-01</span>,  -<span class="number">3.42020143e-01</span>,</span><br><span class="line">        -<span class="number">8.66025404e-01</span>,  -<span class="number">9.84807753e-01</span>,  -<span class="number">6.42787610e-01</span>,</span><br><span class="line">        -<span class="number">2.44929360e-16</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>id(t) == id(x)</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
+<p>sin函数的第二个参数也是x,那么它所做的事情就是对x中的每给值求正弦值,并且把结果保存到x中的<br>对应的位置中。此时函数的返回值仍然是整个计算的结果,只不过它就是x,因此两个变量的id是相同<br>的(变量t和变量x指向同一块内存区域)。<br>比较numpy.math 和 python得math时间(主要记录下运算时间比较的方法)<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = [i * <span class="number">0.001</span> <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1000000</span>)]</span><br><span class="line">start = time.clock()</span><br><span class="line"><span class="keyword">for</span> i, t <span class="keyword">in</span> enumerate(x):</span><br><span class="line">    x[i] = math.sin(t)      </span><br><span class="line"><span class="keyword">print</span> <span class="string">"math.sin:"</span>, time.clock() - start</span><br><span class="line">x = [i * <span class="number">0.001</span> <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1000000</span>)]</span><br><span class="line">x = np.array(x)</span><br><span class="line">start = time.clock()</span><br><span class="line">np.sin(x,x)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"numpy.sin:"</span>, time.clock() - start</span><br></pre></td></tr></table></figure></p>
+<p>对单个数的计算math.sin则比numpy.sin快得多了<br>numpy.sin返回的数的类型和math.sin返回的类型有所不同,math.sin返<br>回的是Python的标准float类型,而numpy.sin则返回一个numpy.float64类型<br>在导入时不建议使用*号全部载入,而是应该使用import numpy as np的方式载入,这样可以根据需要选择合适的函数调用</p>
+<p>更多得ufunc函数<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = np.arange(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = np.arange(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.add(a,b)</span><br><span class="line">array([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c = np.arange(<span class="number">2</span>,<span class="number">6</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>np.add(a,c)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: operands could <span class="keyword">not</span> be broadcast together <span class="keyword">with</span> shapes (<span class="number">5</span>,) (<span class="number">4</span>,)</span><br></pre></td></tr></table></figure></p>
+<p>y = x1 + x2: add(x1, x2 [, y])<br>y = x1 - x2: subtract(x1, x2 [, y])<br>y = x1 <em> x2: multiply (x1, x2 [, y])<br>y = x1 / x2: divide (x1, x2 [, y]), 如果两个数组的元素为整数,那么用整数除法<br>y = x1 / x2: true divide (x1, x2 [, y]), 总是返回精确的商<br>y = x1 // x2: floor divide (x1, x2 [, y]), 总是对返回值取整<br>y = -x: negative(x [,y])<br>y = x1*</em>x2: power(x1, x2 [, y])<br>y = x1 % x2: remainder(x1, x2 [, y]), mod(x1, x2, [, y])</p>
+<p>通过组合标准的ufunc函数的调用,可以实现各种算式的数组计算。不过有些时候这种算式不易编写,<br>而针对每个元素的计算函数却很容易用Python实现,这时可以用frompyfunc函数将一个计算单个元<br>素的函数转换成ufunc函数。这样就可以方便地用所产生的ufunc函数对数组进行计算了.<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">triangle_wave</span><span class="params">(x,c,c0,hc)</span>:</span></span><br><span class="line"><span class="prompt">... </span>	x = x - int(x)     <span class="comment">#三角波得周期为1,只取x坐标得小数部分来计算</span></span><br><span class="line"><span class="prompt">... </span>	<span class="keyword">if</span> x &gt;= c: r = <span class="number">0.0</span></span><br><span class="line"><span class="prompt">... </span>	<span class="keyword">elif</span> x &lt; c0: r = x/c0*hc</span><br><span class="line"><span class="prompt">... </span>	<span class="keyword">else</span>: r = (c -x ) / (c - c0) * hc</span><br><span class="line"><span class="prompt">... </span>	<span class="keyword">return</span> r</span><br><span class="line"><span class="prompt">... </span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>x = np.linspace(<span class="number">0</span>,<span class="number">2</span>, <span class="number">1000</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>y = np.array([triangle_wave(t, <span class="number">0.6</span>, <span class="number">0.4</span>, <span class="number">1.0</span> ) <span class="keyword">for</span> t <span class="keyword">in</span> x])</span><br></pre></td></tr></table></figure></p>
+<p>再使用frompyfunc函数，解决多维数组的问题<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>triangle_ufunc = np.frompyfunc( <span class="keyword">lambda</span> x: triangle_wave(x, <span class="number">0.6</span>, <span class="number">0.4</span>, <span class="number">1.0</span>), <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>y2 = triangle_ufunc(x)</span><br></pre></td></tr></table></figure></p>
+<p>frompyfunc的调用格式为frompyfunc(func, nin, nout),其中func是计算单个元素的函数,nin是此函数的输入参数的个数,nout是此函数的返回值的个数。<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">triangle_func</span><span class="params">(c, c0, hc)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trifunc</span><span class="params">(x)</span>:</span></span><br><span class="line">        x = x - int(x) <span class="comment"># 三角波的周期为1,因此只取x坐标的小数部分进行计算</span></span><br><span class="line">        <span class="keyword">if</span> x &gt;= c: r = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">elif</span> x &lt; c0: r = x / c0 * hc</span><br><span class="line">        <span class="keyword">else</span>: r = (c-x) / (c-c0) * hc</span><br><span class="line">        <span class="keyword">return</span> r</span><br><span class="line">    <span class="comment"># 用trifunc函数创建一个ufunc函数,可以直接对数组进行计算, 不过通过此函数</span></span><br><span class="line">    <span class="comment"># 计算得到的是一个Object数组,需要进行类型转换</span></span><br><span class="line">    <span class="keyword">return</span> np.frompyfunc(trifunc, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">y2 = triangle_func(<span class="number">0.6</span>, <span class="number">0.4</span>, <span class="number">1.0</span>)(x)</span><br></pre></td></tr></table></figure></p>
+<p>通过函数triangle_func包装三角波的三个参数,在其内部定义一个计算三角波的函数trifunc,trifunc函数在调用时会采用triangle_func的参数进行计算。最后triangle_func返回用frompyfunc转换结果。值得注意的是用frompyfunc得到的函数计算出的数组元素的类型为object,因为frompyfunc函数无法保证Python函数返回的数据类型都完全一致。因此还需要再次 y2.astype(np.float64)将其转换为双精度浮点数组。</p>
+<h2 id="3-2_广播">3.2 广播</h2>
+    
+  </div>
+  <center><font color='#a44a54' size='2px'>(转载文章请注明原文出处 <a href="http://wlmutou.github.io/2015/10/02/numpy-15-10-2/" style='font-color:#496b98'>依依木's 博客 </a>)</font></center>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/python/">python</a>
+  </div>
+
+      
+  <div class="tags" style="font-size:14px">
+    <a class="tags-link" href="/tags/numpy/">numpy</a>
+  </div>
+
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+<a name="comments"></a>
+<div class="ds-thread" data-thread-key="2015/10/02/numpy-15-10-2/"  data-title="numpy-15-10-2" data-url="http://wlmutou.github.io/2015/10/02/numpy-15-10-2/"></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+	 <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">Category</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/default/">default</a><small>2</small></li>
+  
+    <li><a href="/categories/lisp/">lisp</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>2</small></li>
+  
+    <li><a href="/categories/shell/">shell</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">TagCloud</h3>
+  <div class="entry">
+    <a href="/tags/lispbuidler/" style="font-size: 10px;">lispbuidler</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/关于/" style="font-size: 10px;">关于</a> <a href="/tags/数学模型/" style="font-size: 10px;">数学模型</a> <a href="/tags/爬山/" style="font-size: 10px;">爬山</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget blogroll">
+  <h3 class="title">BlogRoll</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="http://jun1484528313.blog.163.com/" target="_blank">jun1484528313</a></li>
+  
+    
+    <li><a href="http://evilbinary.org/" target="_blank">依依鸭</a></li>
+  
+    
+    <li><a href="http://blog.objcc.com/" target="_blank">Objcc</a></li>
+  
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+
+  </div>
+  <footer id="footer"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="copyright">
+  
+  &copy; 2015 <a href="/">依依木</a>
+  
+
+    <span id="busuanzi_container_site_pv">
+    |本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <span id="busuanzi_container_site_uv">
+    | <span id="busuanzi_value_site_uv"></span> 人次
+    </span>
+</div>
+<!--<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+--></footer>
+  <script src="/js/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'mutou' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+<div id="tobottom" style="position:fixed;bottom:10px;right:10px;cursor:pointer;">
+	<a title="查看TAG"><img src="/imgs/scrollbottom.png"/></a>
+</div>
+
+<script src="/js/tobottom.js"></script>
+
+<div id="totop" style="position:fixed;bottom:10px;right:10px;cursor:pointer;display:none">
+	<a title="返回顶部"><img src="/imgs/scrolltop.png"/></a>
+</div>
+
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(){
+	/*var img = new Image();
+	img.src = "http://vimer.me/favicon_share.png";
+	img.style.position = 'absolute';
+	img.style.left = '-1000px';
+	img.style.top = '-1000px';
+	img.style.zIndex="-1000";
+	document.body.insertBefore(img, document.body.firstChild);*/
+  })();
+</script>
+
+</body>
+</html>

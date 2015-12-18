@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>slime-lispbuidler | 依依木 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="依依木">
+  
+  
+    <meta name="description" content="common lisp调用sdl图形库">
+  
+  
+  <meta name="description" content="common lisp调用sdl图形库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slime-lispbuidler">
+<meta property="og:url" content="http://wlmutou.github.io/2015/10/06/slime-lispbuidler/index.html">
+<meta property="og:site_name" content="依依木">
+<meta property="og:description" content="common lisp调用sdl图形库">
+<meta property="og:updated_time" content="2015-10-07T11:41:39.577Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="slime-lispbuidler">
+<meta name="twitter:description" content="common lisp调用sdl图形库">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+<body>
+  <div class="wrapper">
+	<header id="header">
+  <div class="title">
+    <h1><a href="/">依依木<font size="3px">&nbsp;人生苦短，执念太深，放不下......</font></a></h1>
+    <!--<p style="font-size:0.82em;margin-top:5px"><a  style='font-size:13px;font-style:normal' href="/"></a></p>-->
+    <p style="font-size:0.82em;"><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+      
+        <li><a  href="/">首页</a></li>
+	  
+      
+      
+        <li><a  href="/collection">收藏</a></li>
+	  
+      
+      
+        <li><a  href="/aboutMe">关于</a></li>
+	  
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a  href="/2015/10/06/slime-lispbuidler/">
+<span class="titleFlag">
+</span>
+  <time style="display:inline" datetime="2015-10-06T11:09:13.000Z">
+    2015-10-06
+  </time>
+</a>
+
+    
+    
+  
+    <h1 class="title">slime-lispbuidler</h1>
+  
+
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>common lisp调用sdl图形库<br><a id="more"></a><br>首先，安装好sdl,sdl-gfx,sdl-mixer,sdl-ttf,sdl-image这些库，图形库.<br>在debian下，如安装sdl,sdl-gfx<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#sudo aptitude install libsdl1.2-dev ;;大概会是这样，比如要是其他版本，会有提示</span></span><br><span class="line"><span class="comment">#sudo aptitude isntall libsdl-gfx1.2-dev  ;;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后，用ee发来得那个quicklisp里面，<br><figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">cl-user&gt;<span class="list">(<span class="keyword">load</span> <span class="string">"~/quicklisp/setup.lisp"</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">quicklisp-quickstart</span><span class="keyword">:install</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">ql</span><span class="keyword">:add-to-init-file</span>)</span></span><br><span class="line"></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">ASDF</span><span class="keyword">:OPERATE</span> <span class="quoted">'ASDF</span><span class="keyword">:LOAD-OP</span> <span class="keyword">:lispbuilder-sdl</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">asdf</span><span class="keyword">:operate</span> <span class="quoted">'asdf</span><span class="keyword">:load-op</span> <span class="keyword">:lispbuilder-sdl-gfx</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">asdf</span><span class="keyword">:operate</span> <span class="quoted">'asdf</span><span class="keyword">:load-op</span> <span class="keyword">:lispbuilder-sdl-mixer</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">asdf</span><span class="keyword">:operate</span> <span class="quoted">'asdf</span><span class="keyword">:load-op</span> <span class="keyword">:lispbuilder-sdl-image</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">asdf</span><span class="keyword">:operate</span> <span class="quoted">'asdf</span><span class="keyword">:load-op</span> <span class="keyword">:lispbuilder-sdl-ttf</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">asdf</span><span class="keyword">:operate</span> <span class="quoted">'asdf</span><span class="keyword">:load-op</span> <span class="keyword">:lispbuilder-sdl-examples</span>)</span></span><br></pre></td></tr></table></figure></p>
+<p>一个实例<br><figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">cl-user&gt;<span class="list">(<span class="keyword">sdl-examples</span><span class="keyword">:fireworks</span>)</span></span><br></pre></td></tr></table></figure></p>
+<p>或者，可以把lispbuilder下载，clone 这个 <a href="https://github.com/lispbuilder/lispbuilder.git" target="_blank" rel="external">https://github.com/lispbuilder/lispbuilder.git</a> ，下载后，一个一个添加进去，具体看lispbuilder的文档吧…<br><figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">cl-user&gt;<span class="list">(<span class="keyword">pushnew</span> <span class="string">"~/path/to/lispbuilder/lispbuilder-sdl"</span> asdf<span class="keyword">:*central-registry*</span> <span class="keyword">:test</span> <span class="quoted">#'equal</span>)</span></span><br><span class="line">cl-user&gt;<span class="list">(<span class="keyword">asdf</span><span class="keyword">:operate</span> <span class="quoted">'asdf</span><span class="keyword">:load-op</span> <span class="keyword">:lispbuilder-sdl</span>)</span></span><br></pre></td></tr></table></figure></p>
+<p>或者，(这个暂时没有尝试过,意思嘛，大家都明白的)<br><figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">require</span> <span class="keyword">:asdf</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">dolist</span> <span class="list">(<span class="keyword">dir</span> <span class="list">(<span class="keyword">directory</span> <span class="string">"~/path/to/lispbuidler/*/"</span>)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">pushnew</span> dir asdf<span class="keyword">:*center-registry*</span> <span class="keyword">:test</span> <span class="quoted">#'equal</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
+
+    
+  </div>
+  <center><font color='#a44a54' size='2px'>(转载文章请注明原文出处 <a href="http://wlmutou.github.io/2015/10/06/slime-lispbuidler/" style='font-color:#496b98'>依依木's 博客 </a>)</font></center>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/lisp/">lisp</a>
+  </div>
+
+      
+  <div class="tags" style="font-size:14px">
+    <a class="tags-link" href="/tags/lispbuidler/">lispbuidler</a>
+  </div>
+
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+<a name="comments"></a>
+<div class="ds-thread" data-thread-key="2015/10/06/slime-lispbuidler/"  data-title="slime-lispbuidler" data-url="http://wlmutou.github.io/2015/10/06/slime-lispbuidler/"></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+	 <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">Category</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/default/">default</a><small>2</small></li>
+  
+    <li><a href="/categories/lisp/">lisp</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>2</small></li>
+  
+    <li><a href="/categories/shell/">shell</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">TagCloud</h3>
+  <div class="entry">
+    <a href="/tags/lispbuidler/" style="font-size: 10px;">lispbuidler</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/关于/" style="font-size: 10px;">关于</a> <a href="/tags/数学模型/" style="font-size: 10px;">数学模型</a> <a href="/tags/爬山/" style="font-size: 10px;">爬山</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget blogroll">
+  <h3 class="title">BlogRoll</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="http://jun1484528313.blog.163.com/" target="_blank">jun1484528313</a></li>
+  
+    
+    <li><a href="http://evilbinary.org/" target="_blank">依依鸭</a></li>
+  
+    
+    <li><a href="http://blog.objcc.com/" target="_blank">Objcc</a></li>
+  
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+
+  </div>
+  <footer id="footer"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="copyright">
+  
+  &copy; 2015 <a href="/">依依木</a>
+  
+
+    <span id="busuanzi_container_site_pv">
+    |本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <span id="busuanzi_container_site_uv">
+    | <span id="busuanzi_value_site_uv"></span> 人次
+    </span>
+</div>
+<!--<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+--></footer>
+  <script src="/js/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'mutou' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+<div id="tobottom" style="position:fixed;bottom:10px;right:10px;cursor:pointer;">
+	<a title="查看TAG"><img src="/imgs/scrollbottom.png"/></a>
+</div>
+
+<script src="/js/tobottom.js"></script>
+
+<div id="totop" style="position:fixed;bottom:10px;right:10px;cursor:pointer;display:none">
+	<a title="返回顶部"><img src="/imgs/scrolltop.png"/></a>
+</div>
+
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(){
+	/*var img = new Image();
+	img.src = "http://vimer.me/favicon_share.png";
+	img.style.position = 'absolute';
+	img.style.left = '-1000px';
+	img.style.top = '-1000px';
+	img.style.zIndex="-1000";
+	document.body.insertBefore(img, document.body.firstChild);*/
+  })();
+</script>
+
+</body>
+</html>
