@@ -1,0 +1,14 @@
+<article class="<%= post.layout %>">
+  <header>
+    <%- partial('post/date', { date_format: theme.archive_date_format }) %>
+    <%- partial('post/title') %>
+	<!--<div class="icon"></div>-->
+	<!--打开注释就是显示评论-->
+	<!--<% if (theme.duoshuo_shortname){ %>
+	<div class="comment">
+	<a style="font-size:12px;" href="<%- config.root %><%- post.path %>#comments" class="ds-thread-count comment-link" data-thread-key="<%- post.path %>" data-count-type="comments"></a>
+	</div>-->
+	<% } %>
+	<!--<%- partial('post/tag') %>-->
+  </header>
+</article>

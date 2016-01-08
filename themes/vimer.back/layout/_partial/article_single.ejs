@@ -1,0 +1,37 @@
+<article class="<%= post.layout %>">
+  <header>
+    <% if (post.layout != 'page'){ %>
+      <%- partial('post/date_single', { date_format: config.date_format }) %>
+    <% } %>
+    <%- partial('post/title') %>
+  </header>
+  <% if (post.photos && post.photos.length > 0){ %>
+    <%- partial('post/gallery') %>
+  <% } %>
+  <div class="entry">
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
+  </div>
+  <footer<% if (index) { %> class="end-sep"<% } %>>
+    <% if (index){ %>
+      <% if (post.excerpt){ %>
+        <div class="alignleft" style="float:left;">
+      <%- partial('post/tag') %>
+        </div>
+      <% } /*若发现有css问题,请在article.styl中的 .entry p 加入white-space pre-wrap*/%>
+      <% if (theme.duoshuo_shortname){ %>
+	  	<div class="alignright" style="text-align:right">
+		<!--<a href="<%- config.root %><%- post.path %>" class="ds-thread-count comment-link alignright" data-thread-key="<%- post.path %>" data-count-type="comments" style="color:#7597C2"></a>-->
+          <a href="<%- config.root %><%- post.path %>#more" class="more-link" ><%= __('excerpt_title') %></a>
+      <% } %>
+    <% } else { %>
+      <%- partial('post/category') %>
+    <% } %>
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+<%- partial('comment') %>

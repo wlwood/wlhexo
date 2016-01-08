@@ -1,0 +1,34 @@
+menu:
+  首页: /
+  收藏: /collection
+  关于: /aboutMe
+#  日记: /archives  
+#  Github: https://github.com/InfoGeeker
+#  Geeks: /geeks
+#  Archives: /archives
+#  About: /about 
+
+
+excerpt_link: Read More
+archive_date_format: MMM DD
+
+widgets:
+  - category
+  - tagcloud
+#  - tag
+#  - recent_comments
+  - blogroll
+
+blogrolls:
+  - jun1484528313: http://jun1484528313.blog.163.com/
+  - 依依鸭: http://evilbinary.org/
+  - Objcc:  http://blog.objcc.com/
+fancybox: true
+duoshuo_shortname: mutou
+
+
+
+#google_analytics:
+baidu_analytics: true 
+
+favicon: /favicon.ico
