@@ -69,7 +69,7 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 #theme: modernist
-theme: vimer
+theme: vimer_theme
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
