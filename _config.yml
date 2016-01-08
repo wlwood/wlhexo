@@ -1,3 +1,4 @@
+
 # Hexo Configuration
 ## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -69,7 +70,7 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 #theme: modernist
-theme: vimer_theme
+theme: vimer
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
